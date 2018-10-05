@@ -1,0 +1,39 @@
+.ulli {
+    box-sizing: border-box;
+    width: 10em;
+    height: 3em;
+    font-size: 20px;
+    border-radius: 0.5em;
+    margin: 0.5em;
+    box-shadow: 0 0 1em rgba(0,0,0,0.2);
+    color: white;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    line-height: 3em;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.ulli:nth-child(odd) {
+    background: linear-gradient(to right, orange, tomato);
+    text-align: left;
+    padding-left: 10%;
+    transform: perspective(500px) rotateY(30deg);
+}
+
+.ulli:nth-child(even) {
+    background: linear-gradient(to left, orange, tomato);
+    text-align: right;
+    padding-right: 10%;
+    transform: perspective(500px) rotateY(-30deg);
+}
+.ulli:nth-child(odd):hover {
+    transform: perspective(200px) rotateY(30deg);
+    padding-left: 5%;
+}
+
+.ulli:nth-child(even):hover {
+    transform: perspective(200px) rotateY(-30deg);
+    padding-right: 5%;
+}
+
