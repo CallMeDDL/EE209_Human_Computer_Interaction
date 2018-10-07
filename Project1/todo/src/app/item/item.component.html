@@ -1,0 +1,218 @@
+<br><br>
+<h2 [ngStyle]="{'text-align': 'center'}" >TODO List</h2>
+<hr style="width: 100%; color: black; height: 10px;" />
+
+<!-- today page -->
+<div *ngIf="id === 'today'">
+<div *ngFor="let post of posts">
+<div class="card" *ngIf="(post.time | date:'EEEE d MMMM') === (CurrentDate | date:'EEEE d MMMM') && post.done === false">
+  <div class="card-header">
+    <div class="container"><div class="row">
+      <div class="col-1">
+        <img src="assets/pics/{{ post.icon }}.svg" class="itemIcon" align="left">
+      </div>
+      <div class="col-7">
+        <h5 class="card-title">{{ post.title }}</h5>
+      </div>
+      <div class="col-2">
+        <a id="{{ post.postid }}" data-toggle="modal" data-target="#editItem" class="text-warning" (click)="edit($event)" >Edit</a>
+      </div>
+      <div class="col-2">
+        <a id="{{ post.postid }}" data-toggle="modal" data-target="#doneItem" class="text-danger" (click)="done($event)">Done</a>
+      </div>
+    </div></div>
+    <div class="card-text"><br>
+      <div *ngIf="post.body !== null" ><b>Detail:</b> {{ post.body }} </div>
+      <div *ngIf="post.time !== null" ><b>Time:</b> {{ post.time | date: 'fullDate'}} </div>
+      <div *ngIf="post.location !== null" ><b>Location:</b> {{ post.location }} </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- next7 page -->
+
+<!-- all -->
+<div *ngIf="id === 'all' || id === '7days'">
+<div *ngFor="let post of posts">
+<div class="card" *ngIf="post.done === false">
+  <div class="card-header">
+    <div class="container"><div class="row">
+      <div class="col-1">
+        <img src="assets/pics/{{ post.icon }}.svg" class="itemIcon" align="left">
+      </div>
+      <div class="col-7">
+        <h5 class="card-title">{{ post.title }}</h5>
+      </div>
+      <div class="col-2">
+        <a id="{{ post.postid }}" data-toggle="modal" data-target="#editItem" class="text-warning" (click)="edit($event)" >Edit</a>
+      </div>
+      <div class="col-2">
+        <a id="{{ post.postid }}" data-toggle="modal" data-target="#doneItem" class="text-danger" (click)="done($event)">Done</a>
+      </div>
+    </div></div>
+    <div class="card-text"><br>
+      <div *ngIf="post.body !== null" ><b>Detail:</b> {{ post.body }} </div>
+      <div *ngIf="post.time !== null" ><b>Time:</b> {{ post.time | date: 'fullDate'}} </div>
+      <div *ngIf="post.location !== null" ><b>Location:</b> {{ post.location }} </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- done -->
+<div *ngIf="id === 'done'">
+<div *ngFor="let post of posts">
+<div class="card" *ngIf="post.done === true">
+  <div class="card-header">
+    <div class="container"><div class="row">
+      <div class="col-1">
+        <img src="assets/pics/{{ post.icon }}.svg" class="itemIcon" align="left">
+      </div>
+      <div class="col-7">
+        <h5 class="card-title">{{ post.title }}</h5>
+      </div>
+      <div class="col-2">
+        <a id="{{ post.postid }}" data-toggle="modal" data-target="#editItem" class="text-warning" (click)="edit($event)" >Edit</a>
+      </div>
+      <div class="col-2">
+        <a id="{{ post.postid }}" data-toggle="modal" data-target="#recallItem" class="text-danger" (click)="done($event)">Recall</a>
+      </div>
+    </div></div>
+    <div class="card-text"><br>
+      <div *ngIf="post.body !== null" ><b>Detail:</b> {{ post.body }} </div>
+      <div *ngIf="post.time !== null" ><b>Time:</b> {{ post.time | date: 'fullDate'}} </div>
+      <div *ngIf="post.location !== null" ><b>Location:</b> {{ post.location }} </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- categories -->
+<div *ngIf="id != 'done' && id != 'all' && id != '7days' && id != 'today'">
+<div *ngFor="let post of posts">
+<div class="card" *ngIf="checkCat(post.icon) && post.done === false">
+  <div class="card-header">
+    <div class="container"><div class="row">
+      <div class="col-1">
+        <img src="assets/pics/{{ post.icon }}.svg" class="itemIcon" align="left">
+      </div>
+      <div class="col-7">
+        <h5 class="card-title">{{ post.title }}</h5>
+      </div>
+      <div class="col-2">
+        <a id="{{ post.postid }}" data-toggle="modal" data-target="#editItem" class="text-warning" (click)="edit($event)" >Edit</a>
+      </div>
+      <div class="col-2">
+        <a id="{{ post.postid }}" data-toggle="modal" data-target="#doneItem" class="text-danger" (click)="done($event)">Done</a>
+      </div>
+    </div></div>
+    <div class="card-text"><br>
+      <div *ngIf="post.body !== null" ><b>Detail:</b> {{ post.body }} </div>
+      <div *ngIf="post.time !== null" ><b>Time:</b> {{ post.time | date: 'fullDate'}} </div>
+      <div *ngIf="post.location !== null" ><b>Location:</b> {{ post.location }} </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<br><br><br>
+<div class="container"><div class="row">
+  <div class="col-5"></div>
+  <div class="col-2">
+    <button type="button" class="btn btn-outline-warning btn-lg"  data-toggle="modal" data-target="#editItem" (click)="newPost()" >New Task</button>
+  </div>
+</div></div>
+
+<!-- Modal -->
+<div class="modal fade" id="editItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Title</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="postTem.title">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Catergories</label>
+          <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="select">
+            <option value="flag">Important</option>
+            <option value="strategy">Affair</option>
+            <option value="laptop">Work</option>
+            <option value="archive">School</option>
+            <option value="goal"> Trips</option>
+            <option value="target">Purchases</option>
+            <option value="team">Social</option>
+            <option value="puzzle-1">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput2">Date</label>
+          <input type="date" class="form-control" id="exampleFormControlInput2" [(ngModel)]="postTem.date">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput3">Location</label>
+          <input type="text" class="form-control" id="exampleFormControlInput3" [(ngModel)]="postTem.location">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Details</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="postTem.body"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal" (click)="save()" >Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="doneItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mark as done</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure to mark this task as done?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal" (click)="yesDone()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="recallItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mark as done</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure to remark this task as undone?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal" (click)="yesRecall()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<header class="blog-header py-4 bg-warning text-center">
+  <a class="blog-header-logo text-white" href="">
+    <h1>TODO LIST: get things done</h1>
+  </a>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-3 d-none d-md-block bg-light sidebar">
+      <br>
+      <app-list></app-list>
+    </nav>
+    <div class="col-9">
+      <div class="container">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
