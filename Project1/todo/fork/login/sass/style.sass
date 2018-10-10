@@ -1,0 +1,250 @@
+/* The version of Bourbon used in this Pen was 4.* */
+@import "bourbon"
+
+/* -------- MIXINS -------- */
+$emerald: #fcb450
+$lightGrey: #515866
+$darkGrey: #2A2D33
+$red: #BC3E48
+$yellow: #B8B136
+$font: "Avenir", sans-serif
+$z: 10000
+$ovlydur: 0.5s
+$blankImg: url("https://s16.postimg.org/umce299tt/blank_Portrait_S_1.png?noCache=1455855743")
+$plusSign: url("https://s16.postimg.org/5rsw86ozl/plus_sign.png?noCache=1455855743")
+$colin: url("http://www.seas.ucla.edu/~tianyi/images/profile-pic.jpeg")
+/* ------------------------ */
+
+.overlay
+  z-index: $z - 1
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: linear-gradient(to bottom, #fcb450 0%,#befc92 100%)
+
+.modal-wrapper
+  z-index: $z
+  position: fixed
+  left: 50%
+  top: 50%
+  @include transform(translate(-50%, -50%))
+  width: 400px
+  background-color: $darkGrey
+  border-radius: 40px
+  font-family: $font
+  color: $lightGrey
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5)
+
+.profile-img
+  position: absolute
+  background-image: $blankImg
+  background-repeat: no-repeat
+  background-size: 90%
+  background-position: 50% 113%
+  background-color: tint($lightGrey, 10%)
+  border-radius: 50%
+  width: 110px
+  height: 110px
+  border: 4px solid $lightGrey
+  left: 50%
+  @include transform(translate(-50%, -50%))
+  &.profile-pic
+    background-image: $colin
+    background-size: contain
+
+.profile-add
+  background-image: $plusSign
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center
+  border-radius: 50%
+  width: 20px
+  height: 20px
+  position: absolute
+  bottom: 5px
+  right: 5px
+  cursor: pointer
+  @include transition(all 0.25s ease)
+  &:hover
+    @include filter(brightness(0.8))
+    @include transform(scale(1.2))
+
+.load-gif
+  position: absolute
+  background: url("http://www.wallies.com/filebin/images/loading_apple.gif")
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center
+  width: 60px
+  height: 60px
+  text-align: center
+  top: 50%
+  left: 50%
+  @include transform(translate(-50%, -50%))
+  @include transition(opacity 0.25s)
+  opacity: 0
+  > div
+    margin-top: 70px
+    color: rgba(255,255,255,0.7)
+  &.show
+    opacity: 1
+
+.text-wrapper
+  margin: 40px
+  -webkit-font-smoothing: antialiased
+  opacity: 0
+  @include transition(opacity 0.25s)
+  &.show
+    opacity: 1
+
+.nav
+  font-size: 21px
+  font-weight: 600
+  text-align: center
+  margin: 80px 0 25px
+  height: 30px
+  width: 100%
+  div
+    -webkit-user-select: none
+    padding-bottom: 8px
+    border-bottom: 2px solid $lightGrey
+    width: 50%
+    float: left
+    cursor: pointer
+    &:hover
+    color: tint($lightGrey, 10%)
+    border-bottom: 2px solid tint($lightGrey, 10%)
+    &.selected
+      color: #fff
+      font-weight: 900
+      border-bottom: 4px solid #fff
+
+form
+  margin: 30px 0
+  height: 58px
+  overflow: hidden
+  @include transition(opacity 0.75s ease, transform 1s, all 0.25s)
+  opacity: 1
+  @include transform(scaleY(1))
+  &.ani-hide
+    @include transition(opacity 0.5s ease, transform 0.75s, height 0.25s)
+    @include transform(scaleY(0))
+    height: 0
+    margin: 0
+    opacity: 0
+
+.form-title
+  text-transform: uppercase
+  font-size: 10px
+  font-weight: 600
+  padding: 0 10px 2px
+  letter-spacing: 0.5px
+
+.content
+  font: 500 18px/40px $font
+  height: 40px
+  padding: 0 10px
+  color: #fff
+  background: $lightGrey
+  border: none
+  @include calc(width, "100% - 20px")
+  border-radius: 10px
+  &:focus
+    outline: none
+    background: tint($lightGrey, 10%)
+
+.security
+  position: absolute
+  @include transform(translateY(5px))
+  right: -5px
+  width: 60px
+  height: 60px
+  opacity: 1
+  &.hide
+    opacity: 0
+
+.circle
+  border-radius: 50%
+  width: 60px
+  height: 60px
+  position: absolute
+  top: 50%
+  left: 50%
+  @include transition(background 0.25s ease)
+  @include transform(translate(-50%, -50%))
+  &.background
+    z-index: $z - 1
+    background: $emerald
+  &.fill
+    z-index: $z
+  &.cover
+    z-index: $z
+    background: $darkGrey
+    width: 50px
+    height: 50px
+
+.security-type
+  z-index: $z + 1
+  text-align: center
+  line-height: 90%
+  position: absolute
+  color: $emerald
+  top: 50%
+  left: 50%
+  @include transform(translate(-48%, -40%))
+
+.security-level
+  font-weight: 900
+
+.secure
+  font-weight: 300
+  font-size: 8px
+  letter-spacing: 1px
+  text-transform: uppercase
+
+.password .content
+  color: #fff
+ 
+.forget
+  text-align: center
+  font-size: 11px
+  font-weight: 800
+  text-transform: uppercase
+  width: 180px
+  letter-spacing: 0.5px
+  margin: 0 auto
+  padding: 3px
+  border-bottom: 1px solid $lightGrey
+  cursor: pointer
+  @include transition(opacity 0.5s, margin 0.5s 0.5s)
+  &:hover
+    color: tint($lightGrey, 10%)
+    border-bottom: 1px solid tint($lightGrey, 10%)
+  &.selected
+    @include transition(opacity 0.5s)
+    opacity: 1
+    height: 0
+    padding: 0
+
+.button
+  color: #fff
+  background: $emerald
+  margin: 0 auto 20px
+  border-radius: 10px
+  font-weight: 800
+  width: 170px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  display: block
+  cursor: pointer
+  @include transition(background 0.25s ease)
+  &:hover
+    background: shade($emerald, 15%)
+
+.text, .text a, .icons a
+  color: #fff
+.text a:hover, .icons a:hover
+  color: $lightGrey

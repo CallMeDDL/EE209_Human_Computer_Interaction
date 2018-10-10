@@ -26,10 +26,10 @@ export class ItemComponent implements OnInit {
     this.postTem = {
       postid: 0,
       icon: 'flag',
-      time: new Date(),
-      title: 'Facebook SDE on-site interview',
-      body: 'First go through several coding interviews. Then, you’ll do a design interview. Next, comes lunch with the recruiter. Finally, there’s a behavioral interview.',
-      location: 'SF Bay Area',
+      time: new Date('2018/10/09'),
+      title: 'NA',
+      body: 'NA',
+      location: 'NA',
       done: false
     };
     console.log(this.posts.length);
@@ -38,15 +38,16 @@ export class ItemComponent implements OnInit {
     this.postTem = {
       postid: 0,
       icon: 'flag',
-      time: new Date(),
-      title: 'Facebook SDE on-site interview',
-      body: 'First go through several coding interviews. Then, you’ll do a design interview. Next, comes lunch with the recruiter. Finally, there’s a behavioral interview.',
-      location: 'SF Bay Area',
+      time: new Date('2018/10/13'),
+      title: 'NA',
+      body: 'NA',
+      location: 'NA',
       done: false
     };
   }
   save(): void {
     this.postTem.icon = this.select;
+    console.log(this.postTem)
     if(this.postTem.postid == 0) { // new Post
       let newOne = this.dataService.newPost();
       newOne.icon = this.postTem.icon;

@@ -29,17 +29,35 @@ export class DataService {
       {
         postid: 1,
         icon: 'archive',
-        time: new Date(),
+        time: new Date("2018/10/09"),
         title: 'ECE209AS presentation',
         body: 'To create and iterate a todo list design and there will be a workshop about prototyping on the same day.',
         location: 'UCLA Bolter Hall',
+        done: false
+      },
+      {
+        postid: 2,
+        icon: 'flag',
+        time: new Date("2018/10/10"),
+        title: 'Facebook SDE on-site interview',
+        body: 'First go through several coding interviews. Then, you’ll do a design interview. Next, comes lunch with the recruiter. Finally, there’s a behavioral interview.',
+        location: 'SF Bay Area',
+        done: false
+      },
+      {
+        postid: 3,
+        icon: 'flag',
+        time: new Date("2018/10/11"),
+        title: 'Google SDE on-site interview',
+        body: 'algorithms coding interview the WHOLE day!',
+        location: 'Mountain View',
         done: false
       }
     ];
     if (localStorage.getItem('savedPosts') == null) {
       localStorage.setItem('savedPosts', JSON.stringify(example));
       this.posts = JSON.parse(localStorage.getItem('savedPosts'));
-      this.nextPostId = 2;
+      this.nextPostId = 4;
     }
     else {
       this.posts = JSON.parse(localStorage.getItem('savedPosts'));
@@ -71,7 +89,7 @@ export class DataService {
     let p = {
       postid: this.nextPostId,
       icon: 'flag',
-      time: new Date(),
+      time: new Date("2018/10/09"),
       title: '',
       body: '',
       location: '',
