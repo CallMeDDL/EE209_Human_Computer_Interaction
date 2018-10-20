@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiny keyboard demo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/textarea.css">
+  
+</head>
+
+<body>
+
+  <section class="container">
+  <h1>
+    <span class="title">tiny</span>
+    <span class="title">keyboard</span>
+    <span class="title">demo</span>
+  </h1>
+  
+  <div class="button">Start</div>
+  </section>
+
+  <div id="input" style="display: none;">
+    <br><br><br><br><br><br><br><br>
+    <div class="paper">
+      <div class="paper-content">
+        <textarea autofocus>Hello world !&#10;Here's a paper textarea tag.</textarea>
+      </div>
+    </div>
+    <br><br><br><br>
+    <div class="keyboard">
+      <div class="keyboard__row">
+        <kbd class="keyboard__key C5">Q</kbd>
+        <kbd class="keyboard__key D5">W</kbd>
+        <kbd class="keyboard__key E5">E</kbd>
+      </div>
+      <div class="keyboard__row">
+        <kbd class="keyboard__key C4">A</kbd>
+        <kbd class="keyboard__key D4">S</kbd>
+        <kbd class="keyboard__key E4">D</kbd>
+      </div>
+      <div class="keyboard__row">
+        <kbd class="keyboard__key C3">Z</kbd>
+        <kbd class="keyboard__key D3">X</kbd>
+        <kbd class="keyboard__key E3">C</kbd>
+      </div>
+    </div>
+  </div>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js'></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>
