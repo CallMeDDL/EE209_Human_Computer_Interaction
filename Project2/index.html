@@ -32,7 +32,7 @@
     <br><br><br><br>
     <div class="keyboard">
       <div class="keyboard__row">
-        <kbd id = "K11" class="keyboard__key C5">Q</kbd>
+        <kbd id = "K11" class="keyboard__key C5">Qa</kbd>
         <kbd id = "K12" class="keyboard__key D5">W</kbd>
         <kbd id = "K13" class="keyboard__key E5">E</kbd>
       </div>
@@ -55,5 +55,10 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js'></script>
   <script src="js/index.js"></script>
   <script src='js/keyboard.js'></script>
+  <script type='text/javascript'>
+  document.querySelector('body').addEventListener('touchstart', function (ev) {
+      event.preventDefault();
+  });
+  </script>
 </body>
 </html>
