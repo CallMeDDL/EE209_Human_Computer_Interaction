@@ -77,7 +77,7 @@ function swipedetect(el,input1, input2, input3, input4,callback){
     }, false)
 }
 var e1_2 = document.getElementById('K12');
-swipedetect(e1_2,'a','b',' ','delete',function(swipedir){
+swipedetect(e1_2,'a','b','delete',' ',function(swipedir){
     //e1_2.innerHTML = '<span style="color:black">' + swipedir +'</span>';
     if(swipedir == 'delete'){
         var $out = $("#output");
