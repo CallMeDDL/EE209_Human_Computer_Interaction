@@ -13,9 +13,9 @@ function swipedetect(el,input1, input2, input3, input4,callback){
     startY,
     distX,
     distY,
-    threshold = 5, 
-    restraint = 15, 
-    allowedTime = 500, 
+    threshold = 10, 
+    restraint = 20, 
+    allowedTime = 300, 
     elapsedTime,
     startTime,
     handleswipe = callback || function(swipedir){}
