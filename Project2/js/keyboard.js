@@ -13,9 +13,9 @@ function swipedetect(el,input1, input2, input3, input4,callback){
     startY,
     distX,
     distY,
-    threshold = 10, 
-    restraint = 10, 
-    allowedTime = 300, 
+    threshold = 5, 
+    restraint = 5, 
+    allowedTime = 200, 
     elapsedTime,
     startTime,
     handleswipe = callback || function(swipedir){}
@@ -77,12 +77,22 @@ function swipedetect(el,input1, input2, input3, input4,callback){
     }, false)
 }
 var e1_2 = document.getElementById('K12');
-swipedetect(e1_2,'a','b',' ','\n',function(swipedir){
+swipedetect(e1_2,'a','b',' ','delete',function(swipedir){
     //e1_2.innerHTML = '<span style="color:black">' + swipedir +'</span>';
-    var $out = $("#output");
-    var currentvalue = $out.val();
-    var newvalue = currentvalue + swipedir;
-    $out.val(newvalue);
+    if(swipedir == 'delete'){
+        var $out = $("#output");
+        var currentvalue = $out.val();
+        var newvalue = currentvalue.substring(0, currentvalue.length - 1);
+        $out.val(newvalue);
+
+    }
+    else{
+        var $out = $("#output");
+        var currentvalue = $out.val();
+        var newvalue = currentvalue + swipedir;
+        $out.val(newvalue);
+    }
+ 
 });
 var e2_1 = document.getElementById('K21');
 swipedetect(e2_1,'c','d','e','f',function(swipedir){
