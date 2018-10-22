@@ -54,6 +54,24 @@ function swipedetect(el,input1, input2, input3, input4,callback){
                 }
             }
         }
+        else{
+            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ 
+                if(distX < 0 ){
+                    swipedir = i1.toUpperCase();
+                }
+                else{
+                    swipedir = i2.toUpperCase();
+                }
+            }
+            else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ 
+                if(distY < 0){
+                    swipedir = i3.toUpperCase();
+                }
+                else{
+                    swipedir = i4.toUpperCase();
+                }
+            }
+        }
         handleswipe(swipedir)
         e.preventDefault()
     }, false)
@@ -114,4 +132,3 @@ swipedetect(e3_3,'w','x','y','z',function(swipedir){
     var newvalue = currentvalue + swipedir;
     $out.val(newvalue);
 });
-
