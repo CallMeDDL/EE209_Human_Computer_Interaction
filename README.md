@@ -12,6 +12,7 @@ Human-Computer Interaction (18 fall)
 - Made this text entry technique fast, novel, practical and easy to learn.
 - Demo url: https://s3.amazonaws.com/tinykeyboard/index.html
 - Demo video: https://youtu.be/IOdwn8xat4E
+- Commercial video: https://youtu.be/qPGmIotmiv4
 
 
 ## Project 3: Pong with sticky hands
