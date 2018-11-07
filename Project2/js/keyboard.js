@@ -13,7 +13,7 @@ function swipedetect(el,input1, input2, input3, input4,callback){
     startY,
     distX,
     distY,
-    threshold = 6, 
+    threshold = 12, 
     restraint = 30, 
     allowedTime = 600, 
     elapsedTime,

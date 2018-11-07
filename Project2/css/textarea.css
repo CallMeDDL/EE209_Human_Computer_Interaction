@@ -85,8 +85,7 @@ footer a {
   background: white;
 }
 
-.keyboard__key.is-down {
-  background: #09F;
-  color: white;
+.keyboard__key:active {
+  background-color: grey;
 }
 
