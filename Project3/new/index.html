@@ -8,6 +8,8 @@
   
   
       <link rel="stylesheet" href="css/style.css">
+        <!-- link to Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
   
 </head>
@@ -23,10 +25,9 @@
     <meta name="author" content="Denis McDonald">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pong</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Monoton|Modak|Bangers" rel="stylesheet">
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.12/howler.core.min.js"></script>
-    <script async type="text/javascript" src="script.js"></script>
 </head>
 <body>
 
@@ -34,40 +35,48 @@
     <div id="spotlight"></div>
  
     <div id="pong">
-        <div id="pp">P</div>
-        <div id="oo">O</div>
-        <div id="nn">N</div>
-        <div id="gg">G</div>
-        <div id="ex">!</div>
+
+        <div id="nn"><img src="logo.png" height="200" width="480" style="top: 30px"></div>
+
+    </div>
+    <img src="pikachu.png" id="pikachu">
+    <!--
+    <img src="xiao.png" height="400" width="50">
+    <img src="Jessie.png" height="400" width="200" align="right">
+    -->
+    <div style="display: none; ">
+        <div id="umpire" >
+            <div id="leftEar"></div>
+            <div id="rightEar"></div>
+        </div>
+
+        <div id="umpShirt" ></div>
+        <div id="tail" ></div>
+
     </div>
 
-    <div id="umpire">
-        <div id="leftEar"></div>
-        <div id="rightEar"></div>
-    </div>
+    
 
-    <div id="umpShirt"></div>
-    <div id="tail"></div>
 
     <div id="eyeleft">
         <div id="shiny1"></div>
         <div id="tearLeft"></div>
-        <div id="eyebrowLeft"></div>
+        <div id="eyebrowLeft" style="display: none; "></div>
     </div>
     
     <div id="eyeright">
         <div id="shiny2"></div>
         <div id="tearRight"></div>
-        <div id="eyebrowRight"></div>
+        <div id="eyebrowRight" style="display: none; "></div>
     </div>
 
     <div id="nose">
-        <div id="whiskers1"></div>
-        <div id="whiskers2"></div>
-        <div id="whiskers3"></div>
-        <div id="whiskers4"></div>
-        <div id="whiskers5"></div>
-        <div id="whiskers6"></div>
+        <div id="whiskers1" style="display: none; "></div>
+        <div id="whiskers2" style="display: none; "></div>
+        <div id="whiskers3" style="display: none; "></div>
+        <div id="whiskers4" style="display: none; "></div>
+        <div id="whiskers5" style="display: none; "></div>
+        <div id="whiskers6" style="display: none; "></div>
     </div>
    
         <div id="p1Score">0</div>
@@ -109,15 +118,11 @@
         <div id="pingLeft">Ping!</div>
         <div id="pongRight">Pong!</div>
 
-    <canvas id="gameCanvas" width="800" height="550"></canvas>
+            <canvas id="gameCanvas" width="800" height="550"></canvas>
 
   <div id="windowAlert"><span>Uh oh!</span><br>Enlarge your browser, or view on desktop to play!</div>
-  
-    <a href="https://github.com/denismcdonald/Cat-Pong"><img id="GitHub" src="https://cdn.glitch.com/9b339c53-cf5a-4254-af3f-084fcb069257%2FGitHub.png?1527820224620"></a>
 
-   <footer><a href="https://github.com/denismcdonald">Created by&nbsp;<span>Denis&nbsp;McDonald</span>.</a><br>
-        <a href="https://github.com/denismcdonald/Cat-Pong/blob/master/README.md">With thanks to <span>these </span>fine </a><a href="https://freesound.org"><img id="freesound" src="https://cdn.glitch.com/9b339c53-cf5a-4254-af3f-084fcb069257%2Ffreesound.png?1527993901485"><a href="https://github.com/denismcdonald/Cat-Pong/blob/master/README.md">folk</a>.
-    </footer>
+
 
 </body>
 </html>

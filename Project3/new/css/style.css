@@ -29,7 +29,7 @@ body {
     -webkit-user-select: none;   
     -moz-user-select: none;
     -ms-user-select: none;
-    background: #ff7b00;
+    background: linear-gradient(to bottom, #fcb450 0%, #befc92 100%);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0; /*Necessary for #overlay div to fill full screen */
     width: 100%;
@@ -506,6 +506,7 @@ footer span {
 
 
 /* "PONG!" heading lettering */
+
 #pong {
     font-family: "Modak";
     font-size: 160px;
@@ -610,13 +611,13 @@ footer span {
     -webkit-transform: translate3d(0,0,0);
     background-color: black;
     border-radius: 45%;
-    height: 15px;
-    left: 50%;
+    height: 17px;
+    left: 49.5%;
     margin-left: -30px;
     position: absolute;
-    top: 235px;    
+    top: 225px;    
     transition: all 100ms ease-out;
-    width: 15px;
+    width: 17px;
     z-index: 4;
 }
 
@@ -624,13 +625,13 @@ footer span {
     -webkit-transform: translate3d(0,0,0); /*Important. See: https://stackoverflow.com/questions/16255634/css3-transition-leaves-a-trail */
     background-color: black;
     border-radius: 45%;
-    height: 15px;
-    left: 50%;
+    height: 17px;
+    left: 50.5%;
     margin-left: 10px;
     position: absolute;
-    top: 235px;
+    top: 225px;
     transition: all 100ms ease-out;
-    width: 15px;
+    width: 17px;
     z-index: 4;
 }
 
@@ -653,16 +654,21 @@ footer span {
     width: 10px;
 }
 
+#pikachu {
+    left: 42.5%;
+    position: absolute;
+}
+
 #nose {
     height: 0;
     border-radius: 10px;
     border-style: solid;
-    border-width: 8px 10px 0 8px;
+    border-width: 5px 8px 0 5px;
     border-color: black transparent transparent transparent;
     left: 50%;
     margin-left: -10px;
     position: absolute;
-    top: 260px;
+    top: 245px;
     transition: all 100ms ease-out;
     width: 0;
     z-index: 4;
@@ -671,30 +677,32 @@ footer span {
 #nose::after {
     background-color: #999;
     content: "";
-    height: 5px;
-    margin-right: 2px;
+    height: 0px;
+    margin-right: 0px;
     margin-top: 5px;
     position: absolute;
-    width: 1px;
+    width: 0px;
     z-index: 4;
 }
 
 #shiny1 {
     background-color: #fff;
-    height: 2px;
+    border-radius: 45%;
+    height: 6px;
     position: absolute;
     right: 5px;
     top: 2px;
-    width: 2px;
+    width: 6px;
 }
 
 #shiny2 {
     background-color: #fff;
-    height: 2px;
+    border-radius: 45%;
+    height: 6px;
     position: absolute;
     right: 5px;
     top: 2px;
-    width: 2px;
+    width: 6px;
 }
 
 #tearLeft {
@@ -719,7 +727,7 @@ footer span {
 }
 
 #tail {
-    background-color: #92c9e0; 
+    background-color: yellow; 
     border: 8px solid black;
     border-radius: 40%;
     filter: drop-shadow(1px 1px 2px #555);
@@ -735,7 +743,7 @@ footer span {
 }
 
 #umpire {
-    background-color: #92c9e0;
+    background-color: yellow;
     border: 8px solid black;
     border-radius: 25px;
     filter: drop-shadow(2px 2px 5px black);
@@ -823,7 +831,7 @@ footer span {
 }
 
 #rightEar {
-    border-color: transparent transparent #92c9e0 transparent;
+    border-color: transparent transparent yellow transparent;
     border-style: solid;
     border-width: 0 25px 38px 25px;
     height: 0;
@@ -835,7 +843,7 @@ footer span {
 }
 
 #leftEar {
-    border-color: transparent transparent #92c9e0 transparent;
+    border-color: transparent transparent yellow transparent;
     border-style: solid;
     border-width: 0 25px 38px 25px;
     height: 0;
