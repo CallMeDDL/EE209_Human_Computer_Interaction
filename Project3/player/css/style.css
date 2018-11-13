@@ -1,0 +1,1202 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    width: 100%;
+}
+
+a {
+    color: skyblue;
+    text-decoration: none;
+}
+
+a span {
+    color: white;
+    padding-right: 1px;
+    text-shadow: 2px 2px 2px black;
+    transition: all .20s ease-out;
+}
+
+a:hover span {
+    font-size: 28px;
+    text-shadow: 6px 6px 12px black;
+    transition: all .15s ease-out;
+}
+
+body {
+    -webkit-user-select: none;   
+    -moz-user-select: none;
+    -ms-user-select: none;
+    background: linear-gradient(to bottom, #fcb450 0%, #befc92 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; /*Necessary for #overlay div to fill full screen */
+    width: 100%;
+}
+
+canvas {
+    border: 8px solid white;
+    border-radius: 15px;
+    box-shadow: 1px 1px 35px rgb(0,0,0.01);
+    cursor: crosshair;
+    display: block;
+    margin: 200px auto 50px;
+}
+
+footer {
+    color: skyblue;
+    font-family: "Modak";
+    font-size: 22px;
+    line-height: 1.7rem;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+    transition: all .25s ease-out;
+}
+
+footer span {
+    font-size: 22px;
+    letter-spacing: 0px;
+    text-transform: none;
+}
+
+#freesound {
+    height: 50px;
+    width: 144px;
+    vertical-align: -18px;
+}
+
+#freesound:hover {
+    animation: cheer .65s infinite;
+}
+
+#GitHub {
+    filter: drop-shadow(1px 1px 1px black);
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+}
+
+#GitHub:hover {
+    animation: shake1 .5s;
+}
+
+#overlay {
+    background-color: black;
+    display: block;
+    height: 110%;
+    min-width: 100%;
+    opacity: .7;
+    position: fixed;
+    transition: opacity 1s ease-out;
+    z-index: 6;
+}
+
+/* Ball ricochet effect particles */
+#particlesY {
+    border-radius: 5px;
+    opacity: 0;
+    position: absolute;
+    top: 100px;
+    visibility: hidden;
+}
+
+#part1Y {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    height: 5px;
+    width: 2px;
+    transform: rotate(-30deg);
+}
+
+#part2Y {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    height: 5px;
+    margin-bottom: 2px;
+    width: 2px;
+}
+
+#part3Y {
+    display: inline-block;
+    background-color: white;
+    border-radius: 5px;
+    height: 5px;
+    width: 2px;
+    transform: rotate(30deg);
+}
+
+#particlesYb {
+    border-radius: 5px;
+    opacity: 0;
+    position: absolute;
+    left: 100px;
+    top: 300px;
+}
+
+#part1Yb {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    height: 5px;
+    transform: rotate(25deg);
+    width: 2px;
+}
+
+#part2Yb {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    height: 5px;
+    margin-bottom: -2px;
+    width: 2px;
+}
+
+#part3Yb {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    height: 5px;
+    transform: rotate(-25deg);
+    width: 2px;
+}
+
+#ricoY {
+    background-color: black;
+    height: 10px;
+    position: absolute;
+    top: 914px; /*364-914*/
+    visibility: hidden;
+    width: 30px;
+}
+
+#ricoX {
+    background-color: red;
+    position: absolute;
+    height: 30px;
+    visibility: hidden;
+    width: 10px;
+}
+
+#speakerOn {
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 1px black);
+    height: 50px;
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    visibility: hidden;
+    width: 50px;
+    z-index: 7;
+}
+
+#speakerOn:hover {
+    animation: shake1 .5s;
+}
+
+#speakerOff {
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 1px black);
+    height: 50px;
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    width: 50px;
+    z-index: 7;
+}
+
+#speakerOff:hover {
+    animation: shake1 .5s;
+}
+
+/* Highlighting of audio button on page load */
+#spotlight {
+    animation: spotlight 1.6s forwards;
+    background-color: #ff7b00;
+    border-radius: 50%;
+    height: 150px;
+    left: 50px;
+    position: absolute;
+    top: 50px;
+    width: 150px;
+    z-index: 6;
+}
+
+/* Keyframe animation classes to be added/removed with JS */
+.cheer {
+    animation: cheer .4s;
+}
+
+.grow {
+    animation: grow 2s;
+}
+
+.ping {
+    animation: ping 1s;
+}
+
+.popIn {
+    animation: popIn 1.25s infinite;
+}
+
+.ricoTop {
+    animation: ricoTop .5s;
+}
+
+.ricoBottom {
+    animation: ricoBottom .5s;
+}
+
+.shake {
+    animation: shake .30s;
+}
+
+.shake1 {
+    animation: shake1 .5s;
+}
+
+.spin {
+    animation: spin .800s;
+}
+
+.spotlight {
+    animation: spotlight 2s;
+}
+
+.sway {
+    animation: sway 2.2s infinite;
+}
+
+.wag {
+    animation: wag 2.5s infinite;
+}
+
+@keyframes cheer {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+@keyframes grow {
+    0% { 
+      transform: scale(1);
+    } 
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+@keyframes ping {
+    0% {
+      opacity: 0;
+      font-size: 30px;
+      text-shadow: 2px 2px 2px black;
+    }
+    15% {
+      opacity: 1;
+      font-size: 45px;
+      text-shadow: 4px 4px 8px black;
+    }
+    100% {
+      opacity: 0;
+      font-size: 30px;
+      text-shadow: 2px 2px 2px black;
+    }
+}
+
+@keyframes popIn {
+    0% {
+      filter: drop-shadow(2px 2px 2px black);
+      font-size: 160px;
+      opacity: .8;
+      text-shadow: 1px 1px 1px black;
+
+    }
+    50% {
+      filter: drop-shadow(10px 3px 5px black);
+      font-size: 165px;
+      opacity: 1;
+      text-shadow: 3px 3px 3px black;
+    }
+    100% {
+      filter: drop-shadow(2px 2px 2px black);
+      font-size: 160px;
+      opacity: .8;
+      text-shadow: 1px 1px 1px black;
+    }
+  }
+
+@keyframes popIn1 {
+    0% {
+      filter: drop-shadow(10px 3px 5px black);
+      font-size: 165px;
+      opacity: 1;
+      text-shadow: 3px 3px 3px black;
+    }
+    50% {
+      filter: drop-shadow(2px 2px 2px black);
+      font-size: 160px;
+      opacity: .8;
+      text-shadow: 1px 1px 1px black;
+    }
+    100% {
+      filter: drop-shadow(10px 3px 5px black);
+      font-size: 165px;
+      opacity: 1;
+      text-shadow: 3px 3px 3px black;
+    }
+}
+
+@keyframes ricoTop {
+    0% {
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      top: 300px;
+    }
+}
+
+@keyframes ricoBottom {
+    0% {
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      top: 940px;
+    }
+}
+
+@keyframes shake {
+    0% { 
+      transform: rotate(2deg);
+    } 
+    25% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-2deg);
+    }
+    75% { 
+      transform: rotate(2deg);;
+    } 
+    100% {
+      transform: rotate(0deg);
+    } 
+}
+
+@keyframes shake1 {
+    0% { 
+      transform: rotate(4deg);
+    } 
+    25% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-4deg);
+    }
+    75% { 
+      transform: rotate(3deg);;
+    } 
+    100% {
+      transform: rotate(0deg);
+    } 
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+}
+
+@keyframes spotlight {
+    0% {
+      height: 150px;
+      left: 50px;
+      top: 50px;
+      width: 150px;
+    }
+    100% {
+      height: 80px;
+      left: 5px;
+      top: 5px;
+      width: 80px;
+    }
+}
+
+@keyframes sway {
+    0% {
+      margin-top: 55px;
+      transform: rotate(1deg);
+    }
+    13% {
+      margin-top: 53px;
+      transform: rotate(1deg);
+    }
+    26% {
+      margin-top: 55px;
+      transform: rotate(1deg);
+    }
+    39% {
+      margin-top: 53px;
+      transform: rotate(-1deg);
+    }
+    52% {
+      margin-top: 55px;
+      transform: rotate(-1deg);
+    }
+    65% {
+      margin-top: 53px;
+      transform: rotate(-1deg);
+    }
+    78% {
+      margin-top: 55px;
+      transform: rotate(-1deg);
+    }
+    88% {
+      margin-top: 53px;
+      transform: rotate(-1deg);
+    }
+    100% {
+      margin-top: 55px;
+      transform: rotate(1deg);
+    }  
+}
+
+@keyframes wag {
+    0% {
+      opacity: 1;
+      transform: rotate(-15deg);
+      top: 163px;      
+    }
+    70% {
+      opacity: .8;
+      transform: rotate(15deg);
+      top: 166px;
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(-15deg);
+      top: 163px;
+    }
+}
+
+
+/* "PONG!" heading lettering */
+
+#pong {
+    font-family: "Modak";
+    font-size: 160px;
+    height: 300px;
+    margin-bottom: -120px;
+    margin-top: -40px;
+    text-align: center;
+}
+
+#pp {
+    animation: popIn 1.5s infinite;
+    color: yellow;
+    display: inline-block;
+    opacity: 1;
+    transform: rotate(-20deg);
+    text-shadow: 2px 2px 2px black;
+}
+  
+#oo {
+    animation: popIn1 1.5s infinite;
+    color: salmon;
+    display: inline-block;
+    opacity: 1;
+    transform: rotate(-5deg);
+    text-shadow: 2px 2px 2px black;
+    vertical-align: 25px;
+}
+  
+#nn {
+    animation: popIn 1.5s infinite;
+    color: lightskyblue;
+    display: inline-block;
+    opacity: 1;
+    transform: rotate(1deg);
+    text-shadow: 2px 2px 2px black;
+    vertical-align: 30px;
+}
+  
+#gg {
+    animation: popIn1 1.5s infinite;
+    color: limegreen;
+    display: inline-block;
+    opacity: 1;
+    text-shadow: 2px 2px 2px black;
+    transform: rotate(15deg);
+    vertical-align: 15px;
+}
+  
+#ex {
+    animation: popIn 1.5s infinite;
+    color: white;
+    display: inline-block;
+    opacity: 1;
+    text-shadow: 2px 2px 2px black;
+    transform: rotate(25deg);
+    vertical-align: -20px;
+}
+
+#pingLeft {
+    color: yellow;
+    font-family: "Bangers";
+    font-size: 30px;
+    position: absolute;
+    text-shadow: 2px 2px 2px black;
+    visibility: hidden;
+}
+
+#pongRight {
+    color: yellow;
+    font-family: "Bangers";
+    font-size: 30px;
+    position: absolute;
+    text-shadow: 2px 2px 2px black;
+    visibility: hidden;
+}
+
+#p1Score {
+    filter: drop-shadow(6px 6px 20px yellow);
+    font-family: Monoton;
+    /* font-size: 50px; */
+    font-weight: bold;
+    left: 33%;
+    margin-top: 30px;
+    position: absolute;
+    font-size: 80px;
+}
+
+#p2Score {
+    font-family: Monoton;
+    /* font-size: 50px; */
+    font-weight: bold;
+    filter: drop-shadow(6px 6px 20px yellow);
+    right: 33.5%;
+    position: absolute;
+    font-size: 80px;
+    margin-top: 30px;
+}
+
+
+/* Cat umpire components */
+#eyeleft {
+    -webkit-transform: translate3d(0,0,0);
+    background-color: black;
+    border-radius: 45%;
+    height: 17px;
+    left: 49.5%;
+    margin-left: -30px;
+    position: absolute;
+    top: 225px;    
+    transition: all 100ms ease-out;
+    width: 17px;
+    z-index: 4;
+}
+
+#eyeright {
+    -webkit-transform: translate3d(0,0,0); /*Important. See: https://stackoverflow.com/questions/16255634/css3-transition-leaves-a-trail */
+    background-color: black;
+    border-radius: 45%;
+    height: 17px;
+    left: 50.5%;
+    margin-left: 10px;
+    position: absolute;
+    top: 225px;
+    transition: all 100ms ease-out;
+    width: 17px;
+    z-index: 4;
+}
+
+#eyebrowLeft {
+    background-color: black;
+    height: 1px;
+    top: -10px;
+    position: absolute;
+    transform: skew(0,-20deg);
+    width: 10px;
+}
+
+#eyebrowRight {
+    background-color: black;
+    height: 1px;
+    left: 5px;
+    top: -10px;
+    position: absolute;
+    transform: skew(0,20deg);
+    width: 10px;
+}
+
+#pikachu {
+    left: 42.5%;
+    position: absolute;
+}
+
+#nose {
+    height: 0;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 5px 8px 0 5px;
+    border-color: black transparent transparent transparent;
+    left: 50%;
+    margin-left: -10px;
+    position: absolute;
+    top: 245px;
+    transition: all 100ms ease-out;
+    width: 0;
+    z-index: 4;
+}
+
+#nose::after {
+    background-color: #999;
+    content: "";
+    height: 0px;
+    margin-right: 0px;
+    margin-top: 5px;
+    position: absolute;
+    width: 0px;
+    z-index: 4;
+}
+
+#shiny1 {
+    background-color: #fff;
+    border-radius: 45%;
+    height: 6px;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    width: 6px;
+}
+
+#shiny2 {
+    background-color: #fff;
+    border-radius: 45%;
+    height: 6px;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    width: 6px;
+}
+
+#tearLeft {
+    background-color: white;
+    height: 2px;
+    position: absolute;
+    right: 2px;
+    top: 13px;
+    width: 11px;
+    visibility: hidden;
+}
+
+#tearRight {
+    background-color: white;
+    border-radius: 4px;
+    height: 2px;
+    position: absolute;
+    right: 2px;
+    top: 13px;
+    width: 11px;
+    visibility: hidden;
+}
+
+#tail {
+    background-color: yellow; 
+    border: 8px solid black;
+    border-radius: 40%;
+    filter: drop-shadow(1px 1px 2px #555);
+    height: 80px;
+    left: 50%;
+    margin-left: -12px;
+    opacity: .9;
+    position: absolute;
+    top: 165px;
+    transition: transform .20s ease-out;
+    width: 12px;
+    z-index: 2;
+}
+
+#umpire {
+    background-color: yellow;
+    border: 8px solid black;
+    border-radius: 25px;
+    filter: drop-shadow(2px 2px 5px black);
+    height: 80px;
+    left: 50%;
+    margin-left: -60px;
+    margin-top: 55px;
+    position: absolute;
+    width: 100px;
+    z-index: 3;
+}
+
+#umpire:hover {
+    animation: shake .5s;
+}
+
+#umpShirt {
+    background-image: repeating-linear-gradient(90deg, white, white 14px, black 14px, black 28px);
+    border: 8px solid black;
+    border-radius: 25px;
+    filter: drop-shadow(2px 2px 5px #555);
+    height: 80px;
+    left: 50%;
+    margin-left: -72px;
+    position: absolute;
+    top: 230px;
+    width: 125px;
+    z-index: 2;
+}
+
+#umpShirt:hover {
+    animation: shake .5s;
+}
+
+#whiskers1 {
+    background-color: #555;
+    height: 1px;
+    margin-left: 12px;
+    margin-top: -6px;
+    transform: skew(0,-5deg);
+    width: 15px;
+}
+
+#whiskers2 {
+    background-color: #555;
+    height: 1px;
+    margin-left: 12px;
+    margin-top: 3px;
+    width: 17px;
+}
+
+#whiskers3 {
+    background-color: #555;
+    height: 1px;
+    margin-left: 12px;
+    margin-top: 3px;
+    transform: skew(0,5deg);
+    width: 15px;
+}
+
+#whiskers4 {
+    background-color: #555;
+    height: 1px;
+    margin-left: -26px;
+    margin-top: -1px;
+    transform: skew(0,-5deg);
+    width: 15px;
+}
+
+#whiskers5 {
+    background-color: #555;
+    height: 1px;
+    margin-left: -28px;
+    margin-top: -5px;
+    width: 17px;
+}
+
+#whiskers6 {
+    background-color: #555;
+    height: 1px;
+    margin-left: -26px;
+    margin-top: -5px;
+    transform: skew(0,5deg);
+    width: 15px;
+}
+
+#rightEar {
+    border-color: transparent transparent yellow transparent;
+    border-style: solid;
+    border-width: 0 25px 38px 25px;
+    height: 0;
+    left: 51px;
+    position: relative;
+    top: -58px;
+    transform: skew(0, 25deg);
+    width: 0;
+}
+
+#leftEar {
+    border-color: transparent transparent yellow transparent;
+    border-style: solid;
+    border-width: 0 25px 38px 25px;
+    height: 0;
+    left: -1px;
+    position: relative;
+    top: -25px;
+    transform: skew(0, -25deg);
+    width: 0;
+}
+/* End of cat components */
+
+#setWins {
+    color: yellow;
+    font-family: "Modak";
+    font-size: 60px;
+    position: absolute;
+    left: 50%;
+    margin-left: -195px;
+    top: 500px;
+    text-shadow: 2px 2px 5px black;
+    visibility: hidden;
+    z-index: 5;
+}
+
+#setWins span {
+    color: white;
+    font-family: "Monoton";
+    font-weight: 900;
+}
+
+.triangle {
+    color: white;
+    height: 50px;
+    width: 50px;
+}
+
+#mWins {
+    border-radius: 5px;
+    cursor: pointer;
+    filter: drop-shadow(-2px -2px 2px black);
+    height: 60px;
+    left: 50%;
+    margin-left: -30px;
+    position: absolute;
+    top: 465px;
+    transform: rotate(180deg);
+    width: 60px;
+    z-index: 5;
+}
+
+#lWins {
+    border-radius: 5px;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px black);
+    height: 60px;
+    left: 50%;
+    position: absolute;
+    margin-left: -30px;
+    top: 565px;
+    width: 60px;
+    z-index: 5;
+}
+
+#clickPlay {
+    color: salmon;
+    font-family: "Modak";
+    font-size: 60px;
+    left: 50%;
+    margin-left: -170px;
+    position: absolute;
+    text-shadow: 2px 2px 5px black;
+    top: 700px;
+    visibility: hidden;
+}
+
+/* Alert that browser needs to be enlarged */
+#windowAlert {
+    color: lightskyblue;
+    font-family: "Modak";
+    font-size: 40px;
+    position: absolute;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    top: 300px;
+    visibility: hidden;
+}
+
+#windowAlert span {
+    color: yellow;
+}
+
+
+@media (max-width: 1100px) {
+    #p1Score {
+        left: 30%;
+    }
+
+    #p2Score {
+        right: 30%;
+    }
+}
+
+@media (min-width: 1300px) {
+    #p1Score {
+        left: 36%;
+    }
+
+    #p2Score {
+        right: 36%;
+    }
+}
+
+@media (min-width: 1600px) {
+    #p1Score {
+        left: 39%;
+    }
+
+    #p2Score {
+        right: 39%;
+    }
+
+@media (min-width: 2000px) {
+    #p1Score {
+        left: 41%;
+    }
+
+    #p2Score {
+        right: 41%;
+    }
+}
+}
+
+@media (max-width: 810px) {
+    canvas {
+        visibility: hidden;
+    }
+
+    footer {
+        margin-top: -200px;
+    }
+
+    #pong {
+        font-size: 40px;
+    }
+
+    #p1Score {
+        visibility: hidden;
+    }
+
+    #p2Score {
+        visibility: hidden;
+    }
+
+    #windowAlert {
+/*      visibility: visible; */
+/*         display: block; */
+        margin: 70px;
+    }
+
+    #speakerOff {
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: -30px;
+        top: 630px;
+        visibility: hidden;
+    }
+
+    #speakerOn {
+        display: block;
+        left: 50%;
+        margin-left: -30px;
+        position: absolute;
+        top: 630px;
+        visibility: hidden;
+    }
+
+    #GitHub {
+        height: 35px;
+        width: 35px;
+    }
+
+    #spotlight {
+        visibility: hidden;
+    }
+
+    #overlay {
+        visibility: hidden;
+    }
+
+    @keyframes popIn {
+        0% {
+          filter: drop-shadow(2px 2px 2px black);
+          font-size: 140px;
+          opacity: .7;
+          text-shadow: 1px 1px 1px black;
+        }
+        50% {
+          filter: drop-shadow(5px 1px 5px black);
+          font-size: 145px;
+          opacity: 1;
+          text-shadow: 3px 3px 3px black;
+        }
+        100% {
+          filter: drop-shadow(2px 2px 2px black);
+          font-size: 140px;
+          opacity: .7;
+          text-shadow: 1px 1px 1px black;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    canvas {
+        visibility: hidden;
+    }
+
+    footer {
+        margin-top: -200px;
+    }
+
+    #pong {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    #umpire {
+        margin-top: 5px;
+    }
+
+    #p1Score {
+        visibility: hidden;
+    }
+
+    #p2Score {
+        visibility: hidden;
+    }
+
+    #windowAlert {
+        font-size: 30px;
+    }
+
+    @keyframes popIn {
+        0% {
+          filter: drop-shadow(2px 2px 2px black);
+          font-size: 100px;
+          opacity: .7;
+          text-shadow: 1px 1px 1px black;
+        }
+        50% {
+          filter: drop-shadow(5px 1px 5px black);
+          font-size: 105px;
+          opacity: 1;
+          text-shadow: 3px 3px 3px black;
+        }
+        100% {
+          filter: drop-shadow(2px 2px 2px black);
+          font-size: 100px;
+          opacity: .7;
+          text-shadow: 1px 1px 1px black;
+        }
+    }
+
+    @keyframes popIn1 {
+        0% {
+          filter: drop-shadow(2px 2px 2px black);
+          font-size: 105px;
+          opacity: .7;
+          text-shadow: 1px 1px 1px black;
+        }
+        50% {
+          filter: drop-shadow(5px 1px 5px black);
+          font-size: 100px;
+          opacity: 1;
+          text-shadow: 3px 3px 3px black;
+        }
+        100% {
+          filter: drop-shadow(2px 2px 2px black);
+          font-size: 105px;
+          opacity: .7;
+          text-shadow: 1px 1px 1px black;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    canvas {
+        visibility: hidden;
+    }
+
+    #pong {
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+
+    #p1Score {
+        left: 18%;
+        visibility: hidden;
+    }
+
+    #p2Score {
+        right: 18%;
+        visibility: hidden;
+    }
+
+    #windowAlert {
+        font-size: 22px;
+    }
+
+    #umpire {
+        margin-top: -5px;
+    }
+
+
+    @keyframes popIn {
+        0% {
+          filter: drop-shadow(2px 2px 2px black);
+          font-size: 80px;
+          opacity: .7;
+          text-shadow: 1px 1px 1px black;
+        }
+        50% {
+          filter: drop-shadow(5px 1px 5px black);
+          font-size: 85px;
+          opacity: 1;
+          text-shadow: 3px 3px 3px black;
+        }
+        100% {
+          filter: drop-shadow(2px 2px 2px black);
+          font-size: 80px;
+          opacity: .7;
+          text-shadow: 1px 1px 1px black;
+        }
+    }
+
+    @keyframes popIn1 {
+        0% {
+          filter: drop-shadow(2px 2px 2px black);
+          font-size: 85px;
+          opacity: .7;
+          text-shadow: 1px 1px 1px black;
+        }
+        50% {
+          filter: drop-shadow(5px 1px 5px black);
+          font-size: 80px;
+          opacity: 1;
+          text-shadow: 3px 3px 3px black;
+        }
+        100% {
+          filter: drop-shadow(2px 2px 2px black);
+          font-size: 85px;
+          opacity: .7;
+          text-shadow: 1px 1px 1px black;
+        }
+    }
+}

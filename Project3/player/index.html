@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pong clone using HTML canvas, vanilla JavaScript and Howler.js</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+        <!-- link to Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+  
+</head>
+
+<body>
+
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cat-adjudicated Pong clone made with vanilla HTML, CSS and JavaScript">
+    <meta name="keywords" content="Pong, JavaScript, CSS, HTML, clone, game, canvas">
+    <meta name="author" content="Denis McDonald">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pong</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Modak|Bangers" rel="stylesheet">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.12/howler.core.min.js"></script>
+</head>
+<body>
+
+    <div id="overlay"></div>
+    <div id="spotlight"></div>
+ 
+    <div id="pong">
+
+        <div id="nn"><img src="logo.png" height="200" width="480" style="top: 30px"></div>
+
+    </div>
+    <img src="pikachu.png" id="pikachu">
+    <!--
+    <img src="xiao.png" height="400" width="50">
+    <img src="Jessie.png" height="400" width="200" align="right">
+    -->
+    <div style="display: none; ">
+        <div id="umpire" >
+            <div id="leftEar"></div>
+            <div id="rightEar"></div>
+        </div>
+
+        <div id="umpShirt" ></div>
+        <div id="tail" ></div>
+
+    </div>
+
+    
+
+
+    <div id="eyeleft">
+        <div id="shiny1"></div>
+        <div id="tearLeft"></div>
+        <div id="eyebrowLeft" style="display: none; "></div>
+    </div>
+    
+    <div id="eyeright">
+        <div id="shiny2"></div>
+        <div id="tearRight"></div>
+        <div id="eyebrowRight" style="display: none; "></div>
+    </div>
+
+    <div id="nose">
+        <div id="whiskers1" style="display: none; "></div>
+        <div id="whiskers2" style="display: none; "></div>
+        <div id="whiskers3" style="display: none; "></div>
+        <div id="whiskers4" style="display: none; "></div>
+        <div id="whiskers5" style="display: none; "></div>
+        <div id="whiskers6" style="display: none; "></div>
+    </div>
+   
+        <div id="p1Score">0</div>
+        <div id="p2Score">0</div>
+
+        <div id="setWins">Score <span id="showScore">5</span> to win!</div>
+        <div id="clickPlay">Click to play!</div>
+        
+        
+        <!--Arrows for adjusting win score-->
+        <img id="mWins" src="https://cdn.glitch.com/9b339c53-cf5a-4254-af3f-084fcb069257%2Farrow.png?1527993871246">
+        <img id="lWins" src="https://cdn.glitch.com/9b339c53-cf5a-4254-af3f-084fcb069257%2Farrow.png?1527993871246">
+
+        <!--Former, less-supported arrows for adjusting win score-->
+        <!-- <svg class="triangle" id="mWins">
+            <polygon points="0,0 50,0 0,50" fill="currentColor"></polygon>
+          </svg>
+          <svg class="triangle" id="lWins">
+            <polygon points="0,0 50,0 0,50" fill="currentColor"></polygon>
+          </svg> -->
+
+        <!--Top border ricochet shapes for hit detection -->
+         <div id="particlesY">
+             <div id="part1Y"></div>
+             <div id="part2Y"></div>
+             <div id="part3Y"></div>
+         </div>
+        
+         <!--Bottom border ricochet shapes for hit detection -->
+         <div id="particlesYb">
+            <div id="part1Yb"></div>
+            <div id="part2Yb"></div>
+            <div id="part3Yb"></div>
+        </div>
+
+        <img id="speakerOn" src="https://cdn.glitch.com/9b339c53-cf5a-4254-af3f-084fcb069257%2FspeakerOn.svg?1527820230123">
+        <img id="speakerOff" src="https://cdn.glitch.com/9b339c53-cf5a-4254-af3f-084fcb069257%2FspeakerOff.svg?1527820230726">
+       
+        <div id="pingLeft">Ping!</div>
+        <div id="pongRight">Pong!</div>
+
+            <canvas id="gameCanvas" width="800" height="550"></canvas>
+
+  <div id="windowAlert"><span>Uh oh!</span><br>Enlarge your browser, or view on desktop to play!</div>
+
+
+
+</body>
+</html>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

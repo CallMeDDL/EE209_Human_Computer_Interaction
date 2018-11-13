@@ -298,12 +298,26 @@ window.onload = function() {
                     var alpha = evt.alpha;
                     var beta = evt.beta;
                     var gamma = evt.gamma;
-                    var moveY = gamma / 90 * 30;
-                    paddle1Y += moveY;
+                    var move1 = 0;
+                    var move2 = 0;
+
+                    if (ballX < 400) {
+                        var move1 = gamma / 90 * 35;
+                    }
+                    if (ballX > 400) {         
+                        var move2 = gamma / 90 * 30;
+                    }
+                    paddle1Y += move1;
+                    paddle2Y += move2;
                     if (paddle1Y < 0 ) {
                         paddle1Y = 0 ;
                     } else if (paddle1Y >  canvas.height-paddleHeight) {
                         paddle1Y =  canvas.height - paddleHeight;
+                    }
+                    if (paddle2Y < 0 ) {
+                        paddle2Y = 0 ;
+                    } else if (paddle2Y >  canvas.height-paddleHeight) {
+                        paddle2Y =  canvas.height - paddleHeight;
                     }
                 }
             }, false);
@@ -380,16 +394,16 @@ function ballReset() {
 } //function ballReset
 
 
-function computerMovement() {
+// function computerMovement() {
     
-    var paddle2YCenter = paddle2Y + (paddleHeight/2);
+//     var paddle2YCenter = paddle2Y + (paddleHeight/2);
     
-    if (paddle2YCenter < ballY-35) {
-        paddle2Y += 5;
-    } else if (paddle2YCenter > ballY+35) {
-        paddle2Y -= 5;
-    }
-}
+//     if (paddle2YCenter < ballY-35) {
+//         paddle2Y += 5;
+//     } else if (paddle2YCenter > ballY+35) {
+//         paddle2Y -= 5;
+//     }
+// }
 
 
 function moveEverything() {
@@ -402,7 +416,7 @@ function moveEverything() {
         return;
     }
 
-    computerMovement();
+    // computerMovement();
 
     ballX += ballSpeedX;
     ballY += ballSpeedY;
@@ -462,10 +476,11 @@ function moveEverything() {
         }
     }
 
-    if (ballX >= canvas.width - 30) {
+    if (ballX >= canvas.width - 30
+        ) {
         
         //Ball hits right paddle
-        if (ballY > paddle2Y && ballY < paddle2Y+paddleHeight) {
+        if (ballY > paddle2Y-10 && ballY < paddle2Y+paddleHeight+10) {
             ballSpeedX = -ballSpeedX;
 
             //Play ball-paddle sound
