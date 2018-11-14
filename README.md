@@ -17,5 +17,6 @@ Human-Computer Interaction (18 fall)
 
 ## Project 3: Pong with sticky hands
 - Develop a Pong game while users are not allowed to touch any mouse, keyboard, button or screen.
+- Demo url: https://s3.amazonaws.com/pongdemo/index.html
 
 ## Project 4:
