@@ -19,4 +19,9 @@ Human-Computer Interaction (18 fall)
 - Develop a Pong game while users are not allowed to touch any mouse, keyboard, button or screen.
 - Demo url: https://s3.amazonaws.com/pongdemo/index.html
 
-## Project 4:
+## Project 4: Intelligent diagnosis system
+- Designed a system that is easy to be understood by human users to facilitate medical decision-making
+- Built an explainable and interpretable system from human perspective
+- Demo url: http://aimedical.s3-website-us-east-1.amazonaws.com
+
+
